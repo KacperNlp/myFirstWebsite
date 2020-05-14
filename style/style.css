@@ -1,0 +1,1607 @@
+/*font-family: 'Saira', sans-serif;
+font-family: 'Saira Stencil One', cursive;
+font-family: 'Saira Condensed', sans-serif;*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: #333;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.wrapper {
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/*header*/
+
+/*nav*/
+.main-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.hamburger {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 3rem;
+    color: #999;
+    z-index: 5;
+}
+
+.hamburger:hover {
+    color: #efefef;
+}
+
+.hamburger:hover~ul {
+    right: 0;
+}
+
+.main-nav ul {
+    position: absolute;
+    width: 100%;
+    right: -100%;
+    list-style: none;
+    transition: .3s linear;
+    z-index: 4;
+}
+
+.main-nav a {
+    display: block;
+    width: 100%;
+    line-height: 25vh;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Saira', sans-serif;
+    font-size: 3rem;
+    color: #efefef;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+/*header img*/
+.header-img {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/stairs.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.black-header-square {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    height: 50vh;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .7);
+    color: #efefef;
+    z-index: 2;
+}
+
+.netblog-header {
+    position: absolute;
+    bottom: 55%;
+    width: 100%;
+    font-family: 'Saira Stencil One', cursive;
+    font-size: 4rem;
+    letter-spacing: 1px;
+}
+
+.header-desc {
+    position: absolute;
+    bottom: 35%;
+    width: 90%;
+    left: 5%;
+    font-family: 'Saira', sans-serif;
+    font-size: 1.8rem;
+}
+
+
+/*mobile 360px*/
+@media (min-width:360px) and (orientation:portrait) {
+    .main-nav a {
+        font-size: 3.2rem;
+    }
+
+    .netblog-header {
+        font-size: 4.2rem;
+    }
+}
+
+/*mobile 410px*/
+@media (min-width:410px) and (orientation:portrait) {
+    .main-nav a {
+        font-size: 3.6rem;
+    }
+
+    .netblog-header {
+        font-size: 4.4rem;
+    }
+
+    .header-desc {
+        font-size: 2rem;
+    }
+}
+
+/*mobile 600px*/
+@media (min-width:600px) and (orientation:portrait) {
+    .hamburger {
+        font-size: 4rem;
+    }
+
+    .main-nav a {
+        font-size: 4.5rem;
+    }
+
+    .netblog-header {
+        font-size: 5rem;
+    }
+
+    .header-desc {
+        font-size: 2.4rem;
+    }
+}
+
+/*ipad 760px*/
+@media (min-width:760px) and (orientation:portrait) {
+    .hamburger {
+        font-size: 4.5rem;
+    }
+
+    .main-nav a {
+        font-size: 5rem;
+    }
+
+    .netblog-header {
+        font-size: 6rem;
+    }
+
+    .header-desc {
+        font-size: 2.8rem;
+    }
+}
+
+/*mobile landscape 520px*/
+@media (min-width:520px) and (orientation:landscape) {
+    .black-header-square {
+        width: 60vw;
+        height: 100%;
+    }
+}
+
+/*mobile landscape 620px*/
+@media (min-width:620px) and (orientation:landscape) {
+    .netblog-header {
+        font-size: 4.8rem;
+    }
+
+    .header-desc {
+        font-size: 2.2rem;
+    }
+}
+
+/*mobile landscape 720px*/
+@media (min-width:720px) and (orientation:landscape) {
+    .netblog-header {
+        font-size: 5.5rem;
+    }
+
+    .header-desc {
+        font-size: 2.4rem;
+    }
+}
+
+/*mobile landscape 800px*/
+@media (min-width:800px) and (orientation:landscape) {
+    .netblog-header {
+        font-size: 5.8rem;
+    }
+
+    .header-desc {
+        font-size: 2.6rem;
+    }
+}
+
+/*1024px*/
+@media (min-width:1020px) {
+
+    /*header nav*/
+    .hamburger {
+        display: none;
+    }
+
+    .main-nav {
+        position: relative;
+        width: 100%;
+        height: 10vh;
+    }
+
+    .main-nav ul {
+        right: 0;
+        width: auto;
+    }
+
+    .main-nav li {
+        float: left;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .main-nav li::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 100%;
+        width: 80%;
+        height: 3px;
+        background-color: #efefef;
+        transition: .3s linear;
+    }
+
+    .main-nav li:hover::after {
+        right: 10%;
+    }
+
+    .main-nav a {
+        padding: 5px 20px;
+        line-height: 7vh;
+        background-color: transparent;
+        font-size: 2.5rem;
+        color: #efefef;
+    }
+
+    /*header img and description*/
+    .header-img {
+        height: 90vh;
+    }
+
+    .black-header-square {
+        width: 55%;
+        height: 110vh;
+        bottom: -10vh;
+        background-color: rgba(0, 0, 0, .8);
+        animation: headerDesc .5s linear;
+    }
+
+    .netblog-header {
+        bottom: 52%;
+        font-size: 8rem;
+    }
+
+    .header-desc {
+        bottom: 40%;
+        font-size: 3.2rem;
+    }
+
+    @keyframes headerDesc {
+        0% {
+            left: -100%;
+        }
+
+        100% {
+            left: 0;
+        }
+    }
+}
+
+/*1024 ipad*/
+@media (min-width:1020px) and (orientation:portrait) {
+    .netblog-header {
+        font-size: 10rem;
+    }
+
+    .header-desc {
+        bottom: 45%;
+        font-size: 3rem;
+    }
+}
+
+/*1280px*/
+@media (min-width:1280px) {
+    .main-nav a {
+        font-size: 3rem;
+    }
+
+    .netblog-header {
+        font-size: 12rem;
+    }
+
+    .header-desc {
+        bottom: 40%;
+        font-size: 3.4rem;
+    }
+}
+
+/*1360px*/
+@media(min-width: 1360px) {
+    .header-desc {
+        width: 70%;
+        left: 15%;
+        bottom: 40%;
+        font-size: 3.4rem;
+    }
+}
+
+/*1660px*/
+@media (min-width:1660px) {
+
+    /*nav*/
+    .main-nav ul {
+        right: 5%;
+    }
+
+    .main-nav li {
+        margin-right: 10px;
+    }
+
+    /*header img and desc*/
+    .header-img {
+        height: 100vh;
+    }
+
+    .black-header-square {
+        height: 120vh;
+    }
+
+    .netblog-header {
+        font-size: 14rem;
+    }
+
+    .header-desc {
+        width: 60%;
+        left: 20%;
+        font-size: 3.8rem;
+    }
+}
+
+
+
+/*MY PASSION*/
+.about-me-conteiner {
+    position: relative;
+    background-image: url('../img/man.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: .9;
+}
+
+/*photo*/
+.my-photo {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(100, 100, 100, .7);
+}
+
+/*description*/
+.about-me {
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #efefef;
+}
+
+.about-me-title {
+    padding-bottom: 30px;
+    text-transform: uppercase;
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+}
+
+.about-me-desc {
+    line-height: 170%;
+    font-family: 'Saira', sans-serif;
+    font-size: 1.6rem;
+}
+
+.about-me-desc::before {
+    content: ',,'
+}
+
+.about-me-desc::after {
+    content: '"'
+}
+
+/*mobile 360px*/
+@media (min-width:360px) and (orientation:portrait) {
+    .about-me-title {
+        font-size: 4rem;
+    }
+
+    .about-me-desc {
+        font-size: 1.8rem;
+    }
+}
+
+/*mobile 410px*/
+@media (min-width:410px) and (orientation:portrait) {
+    .about-me-title {
+        font-size: 4.5rem;
+    }
+
+    .about-me-desc {
+        font-size: 2rem;
+    }
+}
+
+/*600px*/
+@media (min-width:600px) and (orientation:portrait) {
+    .about-me-title {
+        font-size: 5.5rem;
+    }
+
+    .about-me-desc {
+        font-size: 2.3rem;
+    }
+}
+
+/*ipad 760px*/
+@media (min-width:760px) and (orientation:portrait) {
+    .about-me-title {
+        font-size: 7rem;
+    }
+
+    .about-me-desc {
+        font-size: 2.3rem;
+    }
+}
+
+/*ipad 1020px*/
+@media (min-width: 1020px) and (orientation:portrait) {
+    .about-me-title {
+        font-size: 8rem;
+    }
+
+    .about-me-desc {
+        font-size: 3rem;
+    }
+}
+
+/*mobile 640px landscape*/
+@media (min-width:640px) and (orientation:landscape) {
+    .about-me-title {
+        font-size: 4rem;
+    }
+
+    .about-me-desc {
+        font-size: 1.8rem;
+    }
+}
+
+/*mobile 720px landscape*/
+@media (min-width:720px) and (orientation:landscape) {
+    .about-me-title {
+        font-size: 5rem;
+    }
+
+    .about-me-desc {
+        font-size: 2rem;
+    }
+}
+
+/*mobile 810px landscape*/
+@media (min-width:810px) and (orientation:landscape) {
+    .about-me-title {
+        font-size: 5.2rem;
+    }
+
+    .about-me-desc {
+        font-size: 2.2rem;
+    }
+}
+
+/*desktop 1020px*/
+@media (min-width:1020px) and (orientation:landscape) {
+    .about-me-conteiner {
+        clip-path: polygon(0 0, 100% 0, 100% 91%, 0% 100%);
+    }
+
+    .about-me-title {
+        text-align: left;
+        font-size: 6rem;
+    }
+
+    .about-me-desc {
+        width: 80%;
+        margin-left: 15%;
+        text-align: right;
+        font-size: 2.4rem;
+    }
+}
+
+/*desktop 1280px*/
+@media (min-width:1280px) {
+    .about-me-title {
+        font-size: 6.5rem;
+    }
+
+    .about-me-desc {
+        font-size: 2.8rem;
+    }
+}
+
+/*desktop 1600px*/
+@media (min-width:1600px) {
+    .about-me {
+        width: 70%;
+        left: 15%;
+    }
+
+    .about-me-title {
+        font-size: 8rem;
+    }
+
+    .about-me-desc {
+        font-size: 3.2rem;
+    }
+}
+
+/*1800px*/
+@media (min-width:1800px) {
+    .about-me-title {
+        font-size: 10rem;
+    }
+}
+
+
+/*LAST ARTICLES*/
+.last-articles-conteiner {
+    width: 100%;
+    height: 160vh;
+    padding: 30px 0;
+    color: #efefef;
+    background-color: #444;
+}
+
+/*last article title*/
+.last-articles-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+}
+
+/*article background*/
+.last-article {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    margin: 30px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.last-article:nth-of-type(1) {
+    background-image: url('../img/mountains.jpg');
+}
+
+.last-article:nth-of-type(2) {
+    background-image: url('../img/fight.jpg');
+}
+
+.last-article:nth-of-type(3) {
+    background-image: url('../img/road.jpg');
+}
+
+/*article desription and title*/
+.last-article-backgrund {
+    position: absolute;
+    width: 80%;
+    height: 20vh;
+    bottom: 0;
+    left: 0;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.article-title {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 2rem;
+}
+
+.article-desc {
+    line-height: 150%;
+    font-family: 'Saira', sans-serif;
+    font-size: 1.1rem;
+}
+
+
+/*mobile 360px*/
+@media (min-width:360px) and (orientation:portrait) {
+    .last-articles-conteiner {
+        height: 155vh;
+    }
+
+    .last-articles-title {
+        font-size: 4rem;
+    }
+
+    .article-title {
+        font-size: 2.2rem;
+    }
+
+    .article-desc {
+        line-height: 170%;
+        font-size: 1.3rem;
+    }
+}
+
+/*mobile 410px*/
+@media (min-width:410px) and (orientation:portrait) {
+    .last-articles-conteiner {
+        height: 150vh;
+    }
+
+    .article-title {
+        font-size: 2.5rem;
+        margin-bottom: 5px;
+    }
+
+    .article-desc {
+        font-size: 1.4rem;
+    }
+}
+
+/*600px*/
+@media (min-width:600px) and (orientation:portrait) {
+    .last-articles-title {
+        font-size: 5.5rem;
+    }
+
+    .article-title {
+        font-size: 3rem;
+    }
+
+    .article-desc {
+        font-size: 1.6rem;
+    }
+}
+
+/*ipad 760px*/
+@media (min-width:760px) and (orientation:portrait) {
+    .last-articles-conteiner {
+        height: 145vh;
+    }
+
+    .last-articles-title {
+        font-size: 6rem;
+    }
+
+    .last-article-backgrund {
+        width: 70%;
+        height: 18vh;
+    }
+
+    .article-title {
+        font-size: 4rem;
+    }
+
+    .article-desc {
+        font-size: 1.8rem;
+    }
+}
+
+/*ipad 1020px*/
+@media (min-width:1020px) and (orientation:portrait) {
+    .last-articles-title {
+        font-size: 8rem;
+    }
+
+    .article-title {
+        font-size: 6rem;
+    }
+
+    .article-desc {
+        font-size: 2.2rem;
+    }
+}
+
+/*mobile 520px landscape*/
+@media (min-width:520px) and (orientation:landscape) {
+    .last-articles-conteiner {
+        height: 280vh;
+    }
+
+    .last-article {
+        height: 70vh;
+    }
+
+    .last-article-backgrund {
+        height: 30vh;
+        width: 70%;
+    }
+
+    .article-title {
+        font-size: 2.2rem;
+    }
+
+    .article-desc {
+        font-size: 1.2rem;
+    }
+}
+
+/*mobile 620px landscape*/
+@media (min-width:620px) and (orientation:landscape) {
+    .last-articles-conteiner {
+        height: 275vh;
+    }
+
+    .last-articles-title {
+        font-size: 4rem;
+    }
+
+    .last-article-backgrund {
+        height: 35vh;
+    }
+
+    .article-title {
+        font-size: 2.8rem;
+    }
+
+    .article-desc {
+        font-size: 1.6rem;
+    }
+}
+
+/*mobile 720px landscape*/
+@media (min-width:720px) and (orientation:landscape) {
+    .last-articles-conteiner {
+        height: 300vh;
+    }
+
+    .last-articles-title {
+        font-size: 5rem;
+    }
+
+    .last-article {
+        height: 80vh;
+    }
+
+    .last-article-backgrund {
+        height: 40vh;
+    }
+
+    .article-title {
+        margin-top: 10px;
+        font-size: 3.5rem;
+    }
+
+    .article-desc {
+        font-size: 1.8rem;
+    }
+}
+
+/*1020px desktop*/
+@media (min-width:1020px) and (orientation:landscape) {
+    .last-articles-conteiner {
+        position: relative;
+        height: 80vh;
+        padding: 50px 0;
+        clip-path: polygon(0 0, 100% 7%, 100% 88%, 0% 100%);
+    }
+
+    .last-articles-title {
+        font-size: 7rem;
+    }
+
+    .last-article {
+        position: absolute;
+        width: 27%;
+        height: 20vh;
+        left: 3%;
+        transition: .5s;
+    }
+
+    .last-article:nth-of-type(2) {
+        left: 36%;
+    }
+
+    .last-article:nth-of-type(3) {
+        left: 69%;
+    }
+
+    .last-article-backgrund {
+        top: 100%;
+        width: 100%;
+        height: 100%;
+        transition: .5s;
+    }
+
+    .article-title {
+        margin-top: 0px;
+        font-size: 2.5rem;
+        border-bottom: 2px solid #efefef;
+    }
+
+    .article-desc {
+        font-size: 1.5rem;
+    }
+
+    /*hover*/
+    .last-article:hover {
+        transform: scale(1.15);
+        cursor: pointer;
+    }
+
+    .last-article:hover .last-article-backgrund {
+        background-color: #efefef;
+        color: black;
+    }
+
+    .last-article:hover .article-title {
+        border-color: #000;
+    }
+}
+
+/*1280px*/
+@media (min-width:1280px) {
+    .article-title {
+        font-size: 3rem;
+    }
+
+    .article-desc {
+        padding: 10px;
+        font-size: 1.8rem;
+    }
+
+}
+
+/*1600px*/
+@media (min-width:1600px) {
+    .last-article {
+        height: 25vh;
+    }
+
+    .last-articles-conteiner {
+        padding: 100px 0;
+        height: 100vh;
+    }
+
+    .article-title {
+        font-size: 4rem;
+    }
+
+    .article-desc {
+        font-size: 2rem;
+    }
+}
+
+/*1800px /1920px*/
+@media (min-width:1800px) {
+    .article-title {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .article-desc {
+        padding: 20px;
+        font-size: 2.1rem;
+    }
+}
+
+
+/*PASSION*/
+.passion-conteiner {
+    position: relative;
+    padding: 30px 0;
+}
+
+.my-passions-title {
+    text-align: center;
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 4rem;
+    color: #efefef;
+    margin-bottom: 30px
+}
+
+.my-passion {
+    position: relative;
+    height: 30vh;
+    margin-bottom: 200px
+}
+
+.my-passion:nth-of-type(1) {
+    margin-top: 20px;
+}
+
+.passion-img {
+    height: 30vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top: 5px solid #efefef;
+    border-bottom: 5px solid #efefef;
+    clip-path: polygon(50% 0%, 81% 0, 100% 45%, 100% 100%, 16% 100%, 0 56%, 0 0);
+}
+
+.skydive {
+    background-image: url("../img/skydive.jpg");
+}
+
+.vr {
+    background-image: url("../img/vr.jpg");
+    background-position: 50% 80%;
+    clip-path: polygon(50% 0%, 100% 0, 100% 49%, 91% 100%, 0 100%, 0 52%, 13% 0);
+}
+
+.offroad {
+    background-image: url("../img/dirt-bike.jpg");
+}
+
+.paintball {
+    background-image: url("../img/paintball.jpg");
+    clip-path: polygon(50% 0%, 100% 0, 100% 49%, 91% 100%, 0 100%, 0 52%, 13% 0);
+}
+
+.passion-desc-conteiner {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    padding: 10px 25px;
+    color: #efefef;
+    background-color: #444;
+    z-index: 2;
+}
+
+.passion-title {
+    text-transform: uppercase;
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 2.5rem;
+}
+
+.passio-desc {
+    font-family: 'Saira', sans-serif;
+    font-size: 1.3rem;
+}
+
+
+
+/*mobile 360px*/
+@media (min-width:360px) and (orientation:portrait) {
+
+    /*passion conteiners*/
+    .my-passion {
+        margin-bottom: 220px
+    }
+
+    .passion-title {
+        font-size: 3rem;
+    }
+
+    .passio-desc {
+        font-size: 1.4rem;
+    }
+}
+
+/*mobile 410px*/
+@media (min-width:410px) and (orientation:portrait) {
+
+    /*passion title*/
+    .my-passions-title {
+        font-size: 5rem;
+    }
+
+    /*passion conteiners*/
+    .passion-desc-conteiner {
+        padding: 20px 35px;
+    }
+}
+
+/*ipad 760px*/
+@media (min-width:760px) and (orientation:portrait) {
+    .my-passion {
+        margin-bottom: 100px;
+    }
+
+    .passion-img {
+        width: 50%;
+        margin-left: 5%;
+        border: none;
+        clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+    }
+
+    .passion-desc-conteiner {
+        width: 50%;
+        height: 100%;
+        top: 20%;
+        left: 45%;
+        background-color: #333;
+    }
+
+    .passion-title {
+        font-size: 5rem;
+        border-bottom: 3px solid #efefef;
+    }
+
+    .passio-desc {
+        margin-top: 10px;
+        font-size: 1.8rem;
+    }
+
+}
+
+/*ipad 1024px*/
+@media(min-width:1024px) and (orientation:portrait) {
+    .my-passions-title {
+        font-size: 8rem;
+    }
+
+    .passion-title {
+        font-size: 6rem;
+        padding-bottom: 15px;
+        border-bottom: 3px solid #efefef;
+    }
+
+    .passio-desc {
+        margin-top: 15px;
+        font-size: 2.2rem;
+    }
+
+}
+
+
+/*mobile 530px landscape*/
+@media (min-width:530px) and (orientation:landscape) {
+    .my-passion {
+        height: 60vh;
+    }
+
+    .passion-img {
+        height: 60vh;
+    }
+
+    .passion-desc-conteiner {
+        padding: 20px 40px;
+    }
+
+    .passion-title {
+        font-size: 3rem;
+    }
+
+    .passio-desc {
+        font-size: 1.5rem;
+    }
+
+}
+
+/*mobile 640px landscape*/
+@media (min-width:640px) and (orientation:landscape) {
+    .my-passions-title {
+        font-size: 6rem;
+    }
+
+    .my-passion {
+        height: 70vh;
+        margin-bottom: 250px;
+    }
+
+    .passion-img {
+        height: 70vh;
+    }
+
+    .passion-desc-conteiner {
+        padding: 30px 60px;
+    }
+
+    .passion-title {
+        font-size: 3.5rem;
+    }
+
+    .passio-desc {
+        font-size: 1.8rem;
+    }
+}
+
+/*mobile 700px lansdcape*/
+@media(min-width:700px) and (orientation:landscape) {
+    .my-passion {
+        margin-bottom: 270px;
+    }
+
+    .passion-desc-conteiner {
+        padding: 30px 80px;
+    }
+
+    .passion-title {
+        font-size: 4.5rem;
+        padding-bottom: 10px;
+    }
+}
+
+/*mobile 800px landscape*/
+@media (min-width:800px) and (orientation:landscape) {
+    .passion-desc-conteiner {
+        padding: 30px 100px;
+    }
+}
+
+/*desktop 1024px*/
+@media (min-width:1024px) and (orientation:landscape) {
+    .my-passion {
+        height: 50vh;
+        margin-bottom: 100px;
+    }
+
+    /*img*/
+    .passion-img {
+        width: 40%;
+        height: 50vh;
+        margin-left: 15%;
+        border: none;
+        clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+    }
+
+    .skydive {
+        background-position: 50% 50%;
+    }
+
+    .offroad {
+        background-position: 50% 50%;
+    }
+
+    .paintball {
+        background-position: 50% 50%;
+    }
+
+    /*img description*/
+    .passion-desc-conteiner {
+        width: 45%;
+        height: 80%;
+        top: 30%;
+        left: 45%;
+        padding: 15px 30px;
+        background-color: #333;
+    }
+
+    .passion-title {
+        font-size: 6rem;
+        border-bottom: 3px solid #efefef;
+    }
+
+    .passio-desc {
+        margin-top: 10px;
+        font-size: 2rem;
+    }
+
+}
+
+/*desktop 1280px*/
+@media(min-width:1280px) {
+    .my-passions-title {
+        font-size: 9rem;
+    }
+
+    /*img description*/
+    .passion-desc-conteiner {
+        width: 40%;
+    }
+
+    .passion-title {
+        font-size: 7rem;
+    }
+
+    .passio-desc {
+        margin-top: 25px;
+        font-size: 2.5rem;
+    }
+
+}
+
+/*desktop 1600px*/
+@media (min-width:1600px) {
+    .passion-conteiner {
+        height: 160vh;
+        overflow: hidden;
+        max-width: 1920px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /*img*/
+    .my-passion {
+        position: absolute;
+        width: 50%;
+    }
+
+    .my-passion:nth-of-type(1) {
+        left: -5%;
+    }
+
+    .my-passion:nth-of-type(2) {
+        right: 5%;
+        top: 20%;
+    }
+
+    .my-passion:nth-of-type(3) {
+        left: -2%;
+        top: 50%;
+    }
+
+    .my-passion:nth-of-type(4) {
+        right: 2%;
+        top: 60%;
+    }
+
+    .passion-img {
+        height: 40vh;
+    }
+
+    /*img description*/
+    .passion-desc-conteiner {
+        width: 60%;
+    }
+}
+
+
+/*GAMES CONTEINER*/
+
+/*conteiner*/
+.games-conteiner {
+    padding: 50px 0;
+    background-color: #444;
+    color: #efefef;
+    text-align: center;
+}
+
+/*conteiner title*/
+.games-conteiner-title {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #efefef;
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 3.5rem;
+}
+
+/*games conteinesr*/
+.game-conteiner {
+    width: 100%;
+    padding: 30px 30px;
+    box-shadow: inset 0 0 5px #000;
+}
+
+.game-title {
+    margin-bottom: 5px;
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 2.3rem;
+}
+
+.game-desc {
+    font-family: 'Saira', sans-serif;
+    font-size: 1.1rem;
+}
+
+/*mobile 360px*/
+@media (min-width:360px) and (orientation:portrait) {
+    .games-conteiner-title {
+        font-size: 4rem;
+    }
+
+    .game-conteiner {
+        padding: 30px 50px;
+    }
+
+    .game-title {
+        font-size: 2.5rem;
+    }
+
+    .game-desc {
+        font-size: 1.2rem;
+    }
+}
+
+/*mobile 410px*/
+@media (min-width:410px) and (orientation:portrait) {
+
+    .game-desc {
+        font-size: 1.3rem;
+    }
+}
+
+/*ipad 760px*/
+@media (min-width:760px) and (orientation:portrait) {
+
+    /*main conteiner*/
+    .games-conteiner {
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
+        color: #fff;
+    }
+
+    .controlor-png {
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        top: 25%;
+        background-image: url('../img/kontroller.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        opacity: .2;
+        z-index: 0;
+    }
+
+    /*main title*/
+    .games-conteiner-title {
+        margin-bottom: 50px;
+        font-size: 5.5rem;
+    }
+
+    /*games conteiners*/
+    .game-conteiner {
+        width: 50%;
+        position: relative;
+        z-index: 1;
+    }
+
+    .game-title {
+        font-size: 2.7rem;
+    }
+
+    .game-desc {
+        font-size: 1.4rem;
+    }
+}
+
+/*ipad 1024px*/
+@media (min-width:1024px) and (orientation:portrait) {
+
+    /*png*/
+    .controlor-png {
+        left: 50%;
+        transform: translateX(-36.5%);
+    }
+
+    /*main title*/
+    .games-conteiner-title {
+        font-size: 6.5rem;
+    }
+
+    /*games conteiners*/
+    .game-title {
+        font-size: 3rem;
+    }
+
+    .game-desc {
+        font-size: 1.6rem;
+    }
+}
+
+/*mobile 530px landscape*/
+@media (min-width:530px) and (orientation:landscape) {
+
+    /*main container*/
+    .games-conteiner {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    /*main title*/
+    .games-conteiner-title {
+        font-size: 5rem;
+    }
+
+    /*games conteiners*/
+    .game-conteiner {
+        padding: 30px 50px;
+    }
+
+    .game-title {
+        font-size: 3rem;
+    }
+
+    .game-desc {
+        font-size: 1.6rem;
+    }
+}
+
+/*mobile 640px landscape*/
+@media (min-width:640px) and (orientation:landscape) {
+
+    /*games conteiners*/
+    .game-conteiner {
+        padding: 40px 70px;
+    }
+}
+
+/*mobile 720px landscape*/
+@media (min-width:720px) and (orientation:landscape) {
+
+    /*main title*/
+    .games-conteiner-title {
+        font-size: 5.5rem;
+    }
+
+    /*games conteiners*/
+    .game-conteiner {
+        padding: 40px 120px;
+    }
+
+    .game-title {
+        font-size: 3.5rem;
+    }
+
+    .game-desc {
+        font-size: 1.8rem;
+    }
+}
+
+/*mobile 810px landscape*/
+@media (min-width:810px) and (orientation:landscape) {
+
+    /*main title*/
+    .games-conteiner-title {
+        margin-bottom: 80px;
+        font-size: 6rem;
+    }
+
+    /*games conteiners*/
+    .game-conteiner {
+        padding: 50px 150px;
+    }
+
+    .game-title {
+        font-size: 4rem;
+    }
+}
+
+/*desktop 1024px*/
+@media (min-width:1024px) and (orientation:landscape) {
+
+    /*main conteiner*/
+    .games-conteiner {
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
+        color: #fff;
+    }
+
+    .controlor-png {
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        top: 25%;
+        background-image: url('../img/kontroller.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        opacity: .2;
+        z-index: 0;
+    }
+
+    /*games conteiner*/
+    .game-conteiner {
+        width: 50%;
+        position: relative;
+        z-index: 1;
+        padding: 50px 50px;
+    }
+}
+
+/*desktop 1280px*/
+@media (min-width:1280px) {
+
+    /*png*/
+    .controlor-png {
+        left: 50%;
+        transform: translateX(-32%);
+    }
+}
+
+/*1440px*/
+@media (min-width:1440px) {
+
+    /*png*/
+    .controlor-png {
+        left: 50%;
+        top: 30%;
+        transform: translateX(-30%);
+    }
+}
+
+/*1600px*/
+@media (min-width:1600px) {
+
+    /*main conteiner*/
+    .games-conteiner {
+        justify-content: center;
+        border-bottom: 5px solid #efefef;
+    }
+
+    /*png*/
+    .controlor-png {
+        left: 50%;
+        top: 30%;
+        transform: translateX(-35%);
+    }
+
+    /*conteiner title*/
+    .games-conteiner-title {
+        width: 100%;
+        margin-left: 0;
+        border-width: 5px;
+        font-size: 8rem;
+    }
+
+    /*games conteiners*/
+    .game-conteiner {
+        padding: 50px 200px;
+        width: 45%;
+        background-color: rgba(20, 20, 20, .5);
+        transition: .3s;
+    }
+
+    .game-conteiner:hover {
+        transform: scale(1.15);
+        cursor: pointer;
+    }
+
+    .game-conteiner:nth-of-type(3),
+    .game-conteiner:nth-of-type(4),
+    .game-conteiner:nth-of-type(7) {
+        background-color: rgba(80, 80, 80, .5);
+    }
+}
+
+/*1850px*/
+@media (min-width:1850px) {
+
+    /*png*/
+    .controlor-png {
+        left: 50%;
+        top: 30%;
+        transform: translateX(-25%);
+    }
+}
+
+
+/*FOOTER*/
+.footer {
+    padding: 10px 0;
+    text-align: center;
+    color: #efefef;
+    font-size: 1.2rem;
+}
+
+/*mobile 410px*/
+@media (min-width:410px) {
+    .footer {
+        font-size: 1.4rem;
+    }
+}
+
+/*ipad*/
+@media (min-width:700px) {
+    .footer {
+        padding: 20px 0;
+        font-size: 1.8rem;
+    }
+}
